@@ -1,0 +1,17 @@
+The constructed features can be divided into three categories: author-related features, that describe authors’ characteristics only, such as the number of papers that wrote by the author; paper-related features, that extract from papers’ profile only, such as the number of authors of the paper; and the most important author-paper features, that represent the similarity between the given author and paper. At the end of the competition, we totally construct 40 features. We employ Gradient Boosted Tree [4], GBT, as the main classification model which takes author-paper feature vectors as input and outputs whether this pair is correct or not.
+
+ If the author wrote most papers in 2000s, then for a paper that was published before 1990s is unlikely wrote by the author. CRFC defnes a feature as the probability of one kind of event happening under given contexts. Most rules are conducted by analyzing the writing styles of names and affiliations of authors in each paper. For example, we found that if the name of the current author is full but those of all other co-authors are abridged, then this paper is unlikely to be written by the current author. 
+
+That means if one author-paper pair exists multiple times, this paper is wrote by the author with high probability. According to our statistic, 99% pairs are truly assigned if they have multiple records.As we manually matched hundreds of author-names, we found that there are very few name variations occur in the last name. So in our solution we first group all author-name records according to their last names, and then the matched name in each group separately.
+
+Advantages: 
+1. GBT tree gives high efficiency.
+2. CRFC defnes a feature as the probability of one kind of event happening under given contexts, which improve efficiency.
+
+Disadvantages:
+1. The data are very noisy and different data ?les can be inconsistent with each other. We need to clean the data to discovery truth. 
+2. The author sets of training and test data are disjoint and thus we cannot exploit the knowledge of each author directly.
+3. The given information may be limited. Some important factors are missing, such as the bibliography.
+
+
+

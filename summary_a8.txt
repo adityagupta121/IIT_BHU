@@ -1,0 +1,5 @@
+They have proposed a ranking-based name matching algorithm and system RankMatch to author disambuigation task on the Microsoft Academic Search data set. They developed an iterative framework mainly composing two steps. The 1rst step consists of a set of stringbased name matching mechanisms for increasing recall and the second step constains a ranking-based merging technique based on meta-paths for the sake of precision.In this paper, we have proposed our ranking-based name matching algorithm and system RankMatch to author disambuigation task on the Microsoft Academic Search data set. We have developed an iterative framework mainly composing two steps. The ?rst step consists of a set of stringbased name matching mechanisms for increasing recall and the second step constains a ranking-based merging technique based on meta-paths for the sake of precision. Experimental results on the data sets demonstrated the e?ectiveness of the various techniques proposed by this paper. 
+
+Avantages: Simple to implement based on string based algos.
+
+Disadvantages: Less accuracy

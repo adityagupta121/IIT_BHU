@@ -1,0 +1,15 @@
+The task was a collaborative ?ltering task with a set of labeled training data and an unlabeled set of test data. Our approach contains two main steps:
+1. Deep features engineering.
+2. Using the decision trees ensembling method named Gradient Boosting Machine (GBM) .
+
+A set of weights is maintained over the training data. Examples which have been misclassi?ed by the previous learner get their weights increased in the next iteration. Consequently, harder examples possess larger weights and have a higher possibility of being selected for the current training. The dataset can be described in terms of a bipartite graph where each node represents an author or paper and each edge represents whether an author has written a given paper. Thus, the problem can be formulated as follows: de?ne false edges in a bipartite graph of authors and papers. The author-based and paper-based features can be classi?ed as either primary or secondary features. The likelihood ratio of target variable y with respect to feature xi is a probability function. The idea of feature classi?cation based on the bipartite author-paper graph can give new ideas in feature engineering. One could also investigate the author-paper graph from the graph theory point of view. As an example, new features obtained from graph topology (by looking at di?erent graph characteristics such as density or clustering coe?cients) may ultimately improve prediction accuracy.
+
+Advantages:
+
+1. Rather than ensembling various algorithms they decided to concentrate on deep feature engineering and use Gradient Boosting Machine (GBM) with Bernoulli distribution (package gbm in R) as their main algorithm which gave good accuracy with less effort.
+
+2. The idea of feature classi?cation based on the bipartite author-paper graph can give new ideas in feature engineering. One could also investigate the author-paper graph from the graph theory point of view. As an example, new features obtained from graph topology (by looking at di?erent graph characteristics such as density or clustering coe?cients) may ultimately improve prediction accuracy. 
+
+Disadvantages:
+
+1. The initial idea was to use likelihood ratios to generate new features for our machine learning algorithm. Unfortunately, this approach does not work in many cases (particularly, if there are a lot of samples with unique values xi). 
